@@ -1,9 +1,10 @@
 // import { Routes, Route, Link } from 'react-router-dom'
-import { navItems } from './assets/utils'
+import { navItems } from '../assets/utils'
+import './style.css';
 
 export default function Nav() {
     return (
-        <nav>
+        <nav class="nav">
             <ul>
                 {navItems.map(item => (
                     <li>
