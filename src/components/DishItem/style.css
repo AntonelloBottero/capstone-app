@@ -1,0 +1,8 @@
+.dish-item .dish-item__price {
+    font-family: "Karla", sans-serif;
+    font-size:1rem;
+    line-height:1;
+    font-weight:700;
+    color:var(--accent-color);
+    margin-left:auto;
+}

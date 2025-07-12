@@ -4,11 +4,11 @@ import './style.css';
 
 export default function Nav() {
     return (
-        <nav class="nav">
+        <nav className="nav">
             <ul>
                 {navItems.map(item => (
                     <li>
-                        <a href={item.href}>
+                        <a href={item.href} className="">
                             {item.text}
                         </a>
                     </li>

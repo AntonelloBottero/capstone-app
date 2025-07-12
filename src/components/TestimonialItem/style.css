@@ -1,0 +1,26 @@
+.testimonial-item .testimonial-item__rating {
+    font-size:0.875rem;
+    font-weight:700;
+}
+
+.testimonial-item .testimonial-item__content {
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.testimonial-item .testimonial-item__image {
+    flex:0 0 47px;
+    height:47px;
+    background-size:cover;
+    background-position:center center;
+}
+
+.testimonial-item .testimonial-item__name {
+    font-size:0.875rem;
+    font-weight:700;
+}
+
+.testimonial-item .testimonial-item__text {
+    font-size:0.875rem;
+}

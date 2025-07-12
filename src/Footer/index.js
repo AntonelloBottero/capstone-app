@@ -4,12 +4,12 @@ import './style.css';
 
 export default function Footer() {
     return (
-        <footer class="footer section">
-            <div class="section__inner">
-                <img src={LogoSecondary} alt="Little Lemon" class="footer__logo" />
-                <div class="footer__menus">
-                    <nav class="footer__menu">
-                        <h4 class="footer__menu-title">
+        <footer className="footer section">
+            <div className="section__inner">
+                <img src={LogoSecondary} alt="Little Lemon" className="footer__logo" />
+                <div className="footer__menus">
+                    <nav className="footer__menu">
+                        <h4 className="footer__menu-title">
                             Doormat Navigation
                         </h4>
                         <ul>
@@ -22,8 +22,8 @@ export default function Footer() {
                             ))}
                         </ul>
                     </nav>
-                    <address class="footer__menu">
-                        <h4 class="footer__menu-title">
+                    <address className="footer__menu">
+                        <h4 className="footer__menu-title">
                             Contact
                         </h4>
                         <ul>
@@ -32,8 +32,8 @@ export default function Footer() {
                             <li>Email Us</li>
                         </ul>
                     </address>
-                    <address class="footer__menu">
-                        <h4 class="footer__menu-title">
+                    <address className="footer__menu">
+                        <h4 className="footer__menu-title">
                             Socials
                         </h4>
                         <ul>

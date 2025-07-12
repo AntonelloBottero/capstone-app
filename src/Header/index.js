@@ -3,9 +3,9 @@ import Logo from '../assets/imgs/Logo.svg';
 import './style.css';
 export default function Header() {
     return (
-        <header class="section header">
-            <div class="section__inner">
-                <img src={Logo} alt="Little Lemon" class="footer__logo" />
+        <header className="section header">
+            <div className="section__inner">
+                <img src={Logo} alt="Little Lemon" className="footer__logo" />
                 <Nav />
             </div>
         </header>

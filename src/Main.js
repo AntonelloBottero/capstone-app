@@ -1,5 +1,9 @@
+import Home from './Pages/Home/index.js';
+
 export default function Main() {
     return (
-        <main></main>
+        <main>
+            <Home />
+        </main>
     )
 }

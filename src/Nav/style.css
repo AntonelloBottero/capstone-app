@@ -6,5 +6,20 @@
     flex-wrap:wrap;
     justify-content:flex-end;
     align-items:center;
-    gap:12px;
+    gap:28px;
+}
+
+.nav ul li {
+    margin:0;
+}
+
+.nav ul li a {
+    display:inline-block;
+    vertical-align:middle;
+    font-size:1.25rem;
+    font-weight:500;
+    transition:color .2s ease-out;
+}
+.nav ul li a:hover {
+    color:var(--secondary-color);
 }
