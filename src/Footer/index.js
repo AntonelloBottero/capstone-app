@@ -4,14 +4,14 @@ import './style.css';
 
 export default function Footer() {
     return (
-        <footer className="footer section">
+        <footer className="footer section bg--elevated">
             <div className="section__inner">
                 <img src={LogoSecondary} alt="Little Lemon" className="footer__logo" />
                 <div className="footer__menus">
                     <nav className="footer__menu">
-                        <h4 className="footer__menu-title">
+                        <div className="subtitle text--primary footer__menu-title">
                             Doormat Navigation
-                        </h4>
+                        </div>
                         <ul>
                             {navItems.map(item => (
                                 <li>
@@ -23,9 +23,9 @@ export default function Footer() {
                         </ul>
                     </nav>
                     <address className="footer__menu">
-                        <h4 className="footer__menu-title">
+                        <div className="subtitle text--primary footer__menu-title">
                             Contact
-                        </h4>
+                        </div>
                         <ul>
                             <li>69 Vico Araratiano</li>
                             <li>(709)879-4459</li>
@@ -33,9 +33,9 @@ export default function Footer() {
                         </ul>
                     </address>
                     <address className="footer__menu">
-                        <h4 className="footer__menu-title">
+                        <div className="subtitle text--primary footer__menu-title">
                             Socials
-                        </h4>
+                        </div>
                         <ul>
                             <li>Facebook</li>
                             <li>Instagram</li>

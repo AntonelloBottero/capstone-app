@@ -4,6 +4,7 @@
   --accent-color: #ee9972;
   --accent-lighten-color: #fbdabb;
   --surface-color: #edefee;
+  --elevated-color: rgba(73, 94, 87, .4);
   --text-color: #333333;
 }
 
@@ -25,10 +26,16 @@
   box-sizing:border-box;
 }
 
-body {
+html, body {
   font-family: "Karla", sans-serif;
   font-size:16px;
   color:var(--text-color);
+}
+
+@media screen and (max-width: 599px) {
+  html, body {
+    font-size:14px;
+  }
 }
 
 /* Colors */
@@ -50,10 +57,20 @@ body {
   caret-color:var(--text-color);
 }
 
+.bg--elevated {
+  background-color:var(--elevated-color);
+  color:var(--text-color);
+  caret-color:var(--text-color);
+}
+
 .bg--white {
   background-color:#fff;
   color:var(--text-color);
   caret-color:var(--text-color);
+}
+
+.text--primary {
+  color:var(--primary-color);
 }
 
 .text--secondary {
@@ -65,7 +82,7 @@ body {
 }
 
 /* Typography */
-h1, h2, h4 {
+h1,.text-h1, h2, .text-h2, h4, .text-h4 {
   font-family: "Markazi Text", serif;
   line-height:1.1;
   font-weight:500;
@@ -77,11 +94,11 @@ h1, .text-h1 {
   line-height:3.5rem;
 }
 
-h2 {
+h2, .text-h2 {
   font-size:2.5rem;
 }
 
-h3 {
+h3, .text-h3 {
   font-size:1.25rem;
   line-height:1.1;
   font-weight:900;
@@ -89,7 +106,7 @@ h3 {
   margin:0;
 }
 
-h4 {
+h4, .text-h4 {
   font-size:1.125rem;
   line-height:1.1;
   font-weight:500;
@@ -98,6 +115,11 @@ h4 {
 
 .lead-text {
   font-size:1.5rem;
+  font-weight:700;
+}
+
+.subtitle {
+  font-size:1.25rem;
   font-weight:700;
 }
 
@@ -110,6 +132,23 @@ a {
   text-align:center;
 }
 
+.text-justify {
+  text-align:justify;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
 /* Section */
 .section {
   padding:30px 70px;
@@ -119,12 +158,13 @@ a {
   max-width:860px;
   margin-left:auto;
   margin-right:auto;
+  position:relative;
 }
 
 @media screen and (max-width: 599px) {
   .section{
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:24px;
+    padding-right:24px;
   }
 }
 
@@ -166,6 +206,10 @@ a {
 .btn.btn--size-large {
   height:60px;
   padding:0 24px;
+}
+.btn.btn--icon {
+  width:44px;
+  padding:0;
 }
 
 .btn-link {

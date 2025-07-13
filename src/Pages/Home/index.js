@@ -8,6 +8,8 @@ import PierreImage from '../../assets/imgs/testimonials/pierre.jpg';
 import MariaImage from '../../assets/imgs/testimonials/maria.jpg';
 import JeffImage from '../../assets/imgs/testimonials/jeff.jpg';
 import LisaImage from '../../assets/imgs/testimonials/lisa.jpg';
+import MarioAndAdrianAImage from '../../assets/imgs/Mario-and-Adrian-A.jpg';
+import MarioAndAdrianBImage from '../../assets/imgs/Mario-and-Adrian-b.jpg';
 import './style.css';
 
 const specials = [
@@ -123,10 +125,31 @@ export default function Home() {
                         <div class="col-12">
                             <div class="row">
                                 {testimonials.map(testimonial => (
-                                    <div className="col-12 col-md-3 col-sm-6">
+                                    <div className="col-6 col-md-3 col-sm-6">
                                         <TestimonialItem testimonial={testimonial} key={testimonial.id} />
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" className="about section">
+                <div className="section__inner">
+                    <div className="row">
+                        <div className="col-12 col-sm-6">
+                            <div className="text-h1 text--primary">Little Lemon</div>
+                            <div className="text-h2">Chicago</div>
+                            <p className="subtitle text-justify">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br></br>
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+                            </p>
+                        </div>
+                        <div className="col-12 col-sm-6">
+                            <div class="about__images">
+                                <div class="about__image about__image--a" style={{backgroundImage: 'url('+MarioAndAdrianAImage+')'}}></div>
+                                <div class="about__image about__image--b" style={{backgroundImage: 'url('+MarioAndAdrianBImage+')'}}></div>
                             </div>
                         </div>
                     </div>
