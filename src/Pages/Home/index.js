@@ -1,15 +1,15 @@
-import DishItem from '../../components/DishItem/index.js';
-import TestimonialItem from '../../components/TestimonialItem/index.js';
-import RestaurantFood from '../../assets/imgs/restaurantfood.jpg';
-import GreekSaladImage from '../../assets/imgs/greek-salad.jpg';
-import BruschettaImage from '../../assets/imgs/bruschetta.jpg';
-import LemonDessertImage from '../../assets/imgs/lemon-dessert.jpg';
-import PierreImage from '../../assets/imgs/testimonials/pierre.jpg';
-import MariaImage from '../../assets/imgs/testimonials/maria.jpg';
-import JeffImage from '../../assets/imgs/testimonials/jeff.jpg';
-import LisaImage from '../../assets/imgs/testimonials/lisa.jpg';
-import MarioAndAdrianAImage from '../../assets/imgs/Mario-and-Adrian-A.jpg';
-import MarioAndAdrianBImage from '../../assets/imgs/Mario-and-Adrian-b.jpg';
+import DishItem from 'components/DishItem/index.js';
+import TestimonialItem from 'components/TestimonialItem/index.js';
+import RestaurantFood from 'assets/imgs/restaurantfood.jpg';
+import GreekSaladImage from 'assets/imgs/greek-salad.jpg';
+import BruschettaImage from 'assets/imgs/bruschetta.jpg';
+import LemonDessertImage from 'assets/imgs/lemon-dessert.jpg';
+import PierreImage from 'assets/imgs/testimonials/pierre.jpg';
+import MariaImage from 'assets/imgs/testimonials/maria.jpg';
+import JeffImage from 'assets/imgs/testimonials/jeff.jpg';
+import LisaImage from 'assets/imgs/testimonials/lisa.jpg';
+import MarioAndAdrianAImage from 'assets/imgs/Mario-and-Adrian-A.jpg';
+import MarioAndAdrianBImage from 'assets/imgs/Mario-and-Adrian-b.jpg';
 import './style.css';
 
 const specials = [

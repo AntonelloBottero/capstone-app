@@ -1,6 +1,6 @@
-// import { Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { navItems } from '../assets/utils'
+import { navItems } from 'assets/utils'
 import './style.css';
 
 export default function Nav() {
@@ -16,9 +16,9 @@ export default function Nav() {
                 <ul>
                     {navItems.map(item => (
                         <li>
-                            <a href={item.href} key={item.href}>
+                            <Link to={item.href} key={item.href}>
                                 {item.text}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

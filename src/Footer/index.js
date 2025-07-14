@@ -1,5 +1,5 @@
-import LogoSecondary from '../assets/imgs/LogoSecondary.png';
-import { navItems } from '../assets/utils'
+import LogoSecondary from 'assets/imgs/LogoSecondary.png';
+import { navItems } from 'assets/utils'
 import './style.css';
 
 export default function Footer() {
