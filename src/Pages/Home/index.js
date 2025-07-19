@@ -104,8 +104,8 @@ export default function Home() {
                         <div className="cols-12">
                             <div className="row">
                                 {specials.map(special => (
-                                    <div className="col-12 col-sm-4">
-                                        <DishItem dish={special} key={special.id} />
+                                    <div key={special.id} className="col-12 col-sm-4">
+                                        <DishItem dish={special} />
                                     </div>
                                 ))}
                             </div>
@@ -122,11 +122,11 @@ export default function Home() {
                                 Testimonials
                             </h2>
                         </div>
-                        <div class="col-12">
-                            <div class="row">
+                        <div className="col-12">
+                            <div className="row">
                                 {testimonials.map(testimonial => (
-                                    <div className="col-6 col-md-3 col-sm-6">
-                                        <TestimonialItem testimonial={testimonial} key={testimonial.id} />
+                                    <div key={testimonial.id} className="col-6 col-md-3 col-sm-6">
+                                        <TestimonialItem testimonial={testimonial} />
                                     </div>
                                 ))}
                             </div>
@@ -147,9 +147,9 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="col-12 col-sm-6">
-                            <div class="about__images">
-                                <div class="about__image about__image--a" style={{backgroundImage: 'url('+MarioAndAdrianAImage+')'}}></div>
-                                <div class="about__image about__image--b" style={{backgroundImage: 'url('+MarioAndAdrianBImage+')'}}></div>
+                            <div className="about__images">
+                                <div className="about__image about__image--a" style={{backgroundImage: 'url('+MarioAndAdrianAImage+')'}}></div>
+                                <div className="about__image about__image--b" style={{backgroundImage: 'url('+MarioAndAdrianBImage+')'}}></div>
                             </div>
                         </div>
                     </div>

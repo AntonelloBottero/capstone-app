@@ -8,15 +8,15 @@ export default function Nav() {
     return (
         <>
             <button className="nav-toggler btn btn--icon interaction" onClick={() => setMobileMenu(!mobileMenu)}>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     {mobileMenu ? 'close' : 'menu'}
                 </span>
             </button>
             <nav className={"nav" + (mobileMenu ? " mobile-menu-open" : "")}>
                 <ul>
                     {navItems.map(item => (
-                        <li>
-                            <Link to={item.href} key={item.href}>
+                        <li key={item.href} value={item.href}>
+                            <Link to={item.href} >
                                 {item.text}
                             </Link>
                         </li>

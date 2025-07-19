@@ -14,7 +14,7 @@ export default function Footer() {
                         </div>
                         <ul>
                             {navItems.map(item => (
-                                <li>
+                                <li key={item.href}>
                                     <a href={item.href}>
                                         {item.text}
                                     </a>

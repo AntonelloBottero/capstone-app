@@ -4,7 +4,7 @@ export default function Reservations() {
     return (
         <>
             <section className="reservations section">
-                <div class="section__inner">
+                <div className="section__inner">
                     <div className="row">
                         <div className="col-12">
                             <h1>Reservations</h1>
