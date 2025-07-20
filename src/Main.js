@@ -1,4 +1,4 @@
-import {useState, useReducer, createContext, useContext } from 'react'
+import {useState, useEffect, useReducer, createContext, useContext } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './Pages/Home/index.js';
 import Reservations from './Pages/Reservations/index.js';
@@ -9,15 +9,22 @@ export default function Main() {
     const navigate = useNavigate();
 
     // manage available times
-    const updateTimes = (state, date) => {
-        return window.fetchAPI(new Date(date))
+    const [timesDate, setTimesDate] = useState(new Date())
+    const handleFetchTimes = (date) => {
+        setTimesDate(new Date(date || undefined))
     }
-    const initializeTimes = () => {
-        const times = window.fetchAPI(new Date())
+    const updateTimes = (state, times) => {
         return times
     }
-    const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, initializeTimes())
-    
+    const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, [])
+    useEffect(() => {
+        const fetchTimes = async () => {
+            const times = await window.fetchAPI(timesDate)
+            dispatchAvailableTimes(times)
+        }
+        fetchTimes()
+    }, [timesDate])
+
     const submitForm = (formData) => {
         if(window.submitAPI(formData)) {
             navigate('/reservation-confirmed')
@@ -26,7 +33,7 @@ export default function Main() {
 
     return (
         <main>
-            <ReservationContext.Provider value={{availableTimes, dispatchAvailableTimes, submitForm}}>
+            <ReservationContext.Provider value={{availableTimes, fetchTimes: handleFetchTimes, submitForm}}>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/reservations" element={<Reservations/>}></Route>

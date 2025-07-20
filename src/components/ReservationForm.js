@@ -3,7 +3,7 @@ import { useReservationContext } from 'Main.js'
 
 export default function ReservationForm() {
     const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
-    const { availableTimes, dispatchAvailableTimes, submitForm } = useReservationContext();
+    const { availableTimes, fetchTimes, submitForm } = useReservationContext();
 
     const [time, setTime] = useState('19:00')
     const [guests, setGuests] = useState(1)
@@ -11,7 +11,7 @@ export default function ReservationForm() {
 
     const handleDateChange = (e) => {
         setDate(e.target.value)
-        dispatchAvailableTimes(date)
+        fetchTimes(date)
     }
 
     const handleFormSubmit = (e) => {
