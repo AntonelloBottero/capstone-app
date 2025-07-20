@@ -16,7 +16,12 @@ export default function ReservationForm() {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        submitForm({})
+        submitForm({
+            date,
+            time,
+            guests,
+            occasion
+        })
     }
 
     return (
