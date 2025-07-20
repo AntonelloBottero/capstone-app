@@ -7,7 +7,7 @@ const ReservationContext = createContext();
 export default function Main() {
     const [loadingTimes, setLoadingTimes] = useState(false)
     const updateTimes = (state, date) => {
-        return state
+        return window.fetchAPI(new Date(date))
     }
     const initializeTimes = () => {
         const times = window.fetchAPI(new Date())

@@ -9,21 +9,26 @@ export default function ReservationForm() {
     const [guests, setGuests] = useState(1)
     const [occasion, setOccasion] = useState('')
 
-    useEffect(() => {
-        console.log('useEffect')
+    const handleDateChange = (e) => {
+        setDate(e.target.value)
         dispatchAvailableTimes(date)
-    }, [date])
+    }
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        window.submitAPI({})
+    }
 
     return (
         <>
             <h2>Book now</h2>
-            <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}}>
+            <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleFormSubmit}>
                 <label htmlFor="res-date">Choose date</label>
                 <input 
                     type="date" 
                     id="res-date"
                     value={date}
-                    onChange={e => setDate(e.target.value)}
+                    onChange={handleDateChange}
                 />
                 <label htmlFor="res-time">Choose time</label>
                 <select 
