@@ -47,9 +47,6 @@ export default function ReservationForm() {
         <>
             <div className="row">
                 <div className="col-12">
-                    <h2>Book now</h2>
-                </div>
-                <div className="col-12">
                     <form onSubmit={handleFormSubmit}>
                         <div className="row">
                             <div className="col-12 col-sm-6">

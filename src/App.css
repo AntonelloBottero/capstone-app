@@ -327,6 +327,10 @@ textarea {
   padding-left:48px;
 }
 
+.form-field .form-field__field input:focus, .form-field .form-field__field select:focus {
+  background-color:rgba(0,0,0,.08);
+}
+
 .form-field .form-field__error {
   min-height:1.25rem;
   margin-bottom:-1.25rem;
