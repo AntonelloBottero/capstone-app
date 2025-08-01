@@ -3,6 +3,7 @@
   --secondary-color: #f4ce14;
   --accent-color: #ee9972;
   --accent-lighten-color: #fbdabb;
+  --error-color: #DC602E;
   --surface-color: #edefee;
   --elevated-color: rgba(73, 94, 87, .4);
   --text-color: #333333;
@@ -128,6 +129,10 @@ a {
   text-decoration:none;
 }
 
+.text-right {
+  text-align:right;
+}
+
 .text-center {
   text-align:center;
 }
@@ -211,6 +216,10 @@ button {
   width:44px;
   padding:0;
 }
+.btn:disabled {
+  opacity:.5;
+  cursor:default;
+}
 
 .btn-link {
   display:inline-flex;
@@ -264,4 +273,62 @@ button {
   font-size:1rem;
   color:var(--primary-color);
   margin:0;
+}
+
+/* Form */
+input,
+select,
+textarea {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+input,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-field .form-field__field {
+  height:40px;
+  background-color:var(--surface-color);
+  border-radius:6px;
+  position:relative;
+  box-shadow:0 2px 4px 0 rgba(0,0,0,.25);
+  margin-bottom:4px;
+}
+
+.form-field label {
+  display:block;
+  margin-bottom:4px;
+}
+
+.form-field .form-field__field .form-field__icon {
+  position:absolute;
+  top:50%;
+  left:12px;
+  transform:translateY(-50%);
+  color:var(--primary-color);
+}
+
+.form-field .form-field__field input, .form-field .form-field__field select {
+  position:relative;
+  width:100%;
+  height:100%;
+  padding:0 8px 0 20px;
+  border-radius:inherit;
+}
+.form-field .form-field__field .form-field__icon + input, .form-field .form-field__field .form-field__icon + select {
+  padding-left:48px;
+}
+
+.form-field .form-field__error {
+  min-height:1.25rem;
+  margin-bottom:-1.25rem;
+  color:var(--error-color);
 }

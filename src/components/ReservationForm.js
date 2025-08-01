@@ -20,7 +20,7 @@ export default function ReservationForm() {
         return date.value && date.value >= new Date().toISOString().slice(0, 10)
     }
     const isGuestsValid = () => {
-        return time.value > 0 && time.value < 11
+        return guests.value > 0 && guests.value < 11
     }
     const getIsFormValid = () => {
         if(!isDateValid()) { return false }
@@ -45,58 +45,89 @@ export default function ReservationForm() {
 
     return (
         <>
-            <h2>Book now</h2>
-            <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleFormSubmit}>
-                <div class="form-field">
-                    <label htmlFor="res-date">Choose date</label>
-                    <input
-                        type="date"
-                        id="res-date"
-                        value={date.value}
-                        onChange={handleDateChange}
-                    />
-                    {!isDateValid() && date.touched && <div class="form-field__error">Select a date from today on</div>}
+            <div className="row">
+                <div className="col-12">
+                    <h2>Book now</h2>
                 </div>
-                <div class="form-field">
-                <label htmlFor="res-time">Choose time</label>
-                <select
-                    id="res-time"
-                    value={time.value}
-                    onChange={e => setTime({value: e.target.value, touched: true})}
-                >
-                    <option value=""></option>
-                    {availableTimes.map(at => <option key={at} value={at}>{at}</option>)}
-                </select>
-                {!time.value && time.touched && <div class="form-field__error">Select a time</div>}
+                <div className="col-12">
+                    <form onSubmit={handleFormSubmit}>
+                        <div className="row">
+                            <div className="col-12 col-sm-6">
+                                <div className="form-field">
+                                    <label htmlFor="res-date">Choose date</label>
+                                    <div className="form-field__field">
+                                        <input
+                                            type="date"
+                                            id="res-date"
+                                            value={date.value}
+                                            onChange={handleDateChange}
+                                        />
+                                    </div>
+                                    {!isDateValid() && date.touched && <div className="form-field__error">Select a date from today on</div>}
+                                </div>
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <div className="form-field">
+                                    <label htmlFor="res-time">Choose time</label>
+                                    <div className="form-field__field">
+                                        <select
+                                            id="res-time"
+                                            value={time.value}
+                                            onChange={e => setTime({value: e.target.value, touched: true})}
+                                        >
+                                            <option value=""></option>
+                                            {availableTimes.map(at => <option key={at} value={at}>{at}</option>)}
+                                        </select>
+                                    </div>
+                                    {!time.value && time.touched && <div className="form-field__error">Select a time</div>}
+                                </div>
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <div className="form-field">
+                                    <label htmlFor="guests">Number of guests</label>
+                                    <div className="form-field__field">
+                                        <input
+                                            type="number"
+                                            placeholder="1"
+                                            min="1"
+                                            max="10"
+                                            id="guests"
+                                            value={guests.value}
+                                            onChange={e => setGuests({ value: e.target.value, touched: true})}
+                                        />
+                                    </div>
+                                    {!isGuestsValid() && guests.touched && <div className="form-field__error">Select number of guests (min 1, max 10)</div>}
+                                </div>
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <div className="form-field">
+                                    <label htmlFor="occasion">Occasion</label>
+                                    <div className="form-field__field">
+                                        <span className="material-symbols-outlined form-field__icon">
+                                            celebration
+                                        </span>
+                                        <select
+                                            id="occasion"
+                                            value={occasion.value}
+                                            onChange={e => setOccasion({ value: e.target.value, touched: true })}
+                                        >
+                                            <option value=""></option>
+                                            <option value="Birthday">Birthday</option>
+                                            <option value="Anniversary">Anniversary</option>
+                                        </select>
+                                    </div>
+                                    {!occasion.value && occasion.touched && <div className="form-field__error">Select an occasion</div>}
+                                </div>
+                            </div>
+                            <div className="col-12 text-right">
+                                <button type="submit" value="Make Your reservation" disabled={!getIsFormValid()} className="btn bg--secondary">
+                                    Book now
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-field">
-                    <label htmlFor="guests">Number of guests</label>
-                    <input
-                        type="number"
-                        placeholder="1"
-                        min="1"
-                        max="10"
-                        id="guests"
-                        value={guests.value}
-                        onChange={e => setGuests({ value: e.target.value, touched: true})}
-                    />
-                    {!isGuestsValid() && guests.touched && <div class="form-field__error">Select number of guests (min 1, max 10)</div>}
-                </div>
-                <div class="form-field">
-                    <label htmlFor="occasion">Occasion</label>
-                    <select
-                        id="occasion"
-                        value={occasion.value}
-                        onChange={e => setOccasion({ value: e.target.value, touched: true })}
-                    >
-                        <option value=""></option>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Anniversary">Anniversary</option>
-                    </select>
-                    {!occasion.value && occasion.touched && <div class="form-field__error">Select an occasion</div>}
-                </div>
-                <input type="submit" value="Make Your reservation" disabled={!getIsFormValid()} />
-            </form>
+            </div>
         </>
     )
 }
