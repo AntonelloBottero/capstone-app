@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import DishItem from 'components/DishItem/index.js';
 import TestimonialItem from 'components/TestimonialItem/index.js';
 import RestaurantFood from 'assets/imgs/restaurantfood.jpg';
@@ -79,9 +80,9 @@ export default function Home() {
                             <p className="lead-text">
                                 We are a family owned Mediterranean restaurant,<br />focused on a traditional recipes served with a modern twist.
                             </p>
-                            <a href="/reservation" className="btn interaction bg--secondary">
+                            <Link to="/reservations" className="btn interaction bg--secondary">
                                 <span>Reserve a table</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-12 col-sm-5 ml-auto">
                             <div className="hero__image" style={{backgroundImage: 'url('+RestaurantFood+')'}}></div>

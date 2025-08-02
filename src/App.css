@@ -3,6 +3,7 @@
   --secondary-color: #f4ce14;
   --accent-color: #ee9972;
   --accent-lighten-color: #fbdabb;
+  --success-color: #4DAA57;
   --error-color: #DC602E;
   --surface-color: #edefee;
   --elevated-color: rgba(73, 94, 87, .4);
@@ -31,6 +32,11 @@ html, body {
   font-family: "Karla", sans-serif;
   font-size:16px;
   color:var(--text-color);
+  background-color:var(--elevated-color);
+}
+
+#root {
+  background-color:#fff;
 }
 
 @media screen and (max-width: 599px) {
@@ -80,6 +86,10 @@ html, body {
 
 .text--accent {
   color:var(--accent-color);
+}
+
+.text--success {
+  color:var(--success-color);
 }
 
 /* Typography */

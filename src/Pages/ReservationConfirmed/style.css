@@ -1,0 +1,10 @@
+.reservation-confirmed .reservation-confirmed__card {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.reservation-confirmed .reservation-confirmed__card .reservation-confirmed__icon {
+    font-size:4rem;
+}

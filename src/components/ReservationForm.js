@@ -47,7 +47,7 @@ export default function ReservationForm() {
         <>
             <div className="row">
                 <div className="col-12">
-                    <form onSubmit={handleFormSubmit}>
+                    <form aria-label="Reservation form" onSubmit={handleFormSubmit}>
                         <div className="row">
                             <div className="col-12 col-sm-6">
                                 <div className="form-field">
@@ -58,6 +58,7 @@ export default function ReservationForm() {
                                             id="res-date"
                                             value={date.value}
                                             onChange={handleDateChange}
+                                            required
                                         />
                                     </div>
                                     {!isDateValid() && date.touched && <div className="form-field__error">Select a date from today on</div>}
@@ -71,6 +72,7 @@ export default function ReservationForm() {
                                             id="res-time"
                                             value={time.value}
                                             onChange={e => setTime({value: e.target.value, touched: true})}
+                                            required
                                         >
                                             <option value=""></option>
                                             {availableTimes.map(at => <option key={at} value={at}>{at}</option>)}
@@ -90,6 +92,7 @@ export default function ReservationForm() {
                                             max="10"
                                             id="guests"
                                             value={guests.value}
+                                            required
                                             onChange={e => setGuests({ value: e.target.value, touched: true})}
                                         />
                                     </div>
@@ -106,6 +109,7 @@ export default function ReservationForm() {
                                         <select
                                             id="occasion"
                                             value={occasion.value}
+                                            required
                                             onChange={e => setOccasion({ value: e.target.value, touched: true })}
                                         >
                                             <option value=""></option>
@@ -117,7 +121,7 @@ export default function ReservationForm() {
                                 </div>
                             </div>
                             <div className="col-12 text-right">
-                                <button type="submit" value="Make Your reservation" disabled={!getIsFormValid()} className="btn bg--secondary">
+                                <button type="submit" value="Make Your reservation" disabled={!getIsFormValid()} className="btn btn--size-large bg--secondary">
                                     Book now
                                 </button>
                             </div>

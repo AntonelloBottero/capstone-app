@@ -2,7 +2,7 @@ import {useState, useEffect, useReducer, createContext, useContext } from 'react
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from './Pages/Home/index.js';
 import Reservations from './Pages/Reservations/index.js';
-import ReservationConfirmed from './Pages/ReservationConfirmed.js';
+import ReservationConfirmed from './Pages/ReservationConfirmed/index.js';
 const ReservationContext = createContext();
 
 export default function Main() {
